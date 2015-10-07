@@ -19,16 +19,17 @@ int main(int argc, char **argv) {
     double amplitude2 = pi; // amplitude value for joint2
     double frequency2 = 4; // frequency value for joint2
     int seq = 0;
-    std::vector<double> position;
+    std::vector<double> position(2, 0);
     std::vector<std::string> name;
+    std::vector<std::string>::iterator nameIt;
+    name.push_back("joint1");
+    name.push_back("joint2");
     sensor_msgs::JointState output; // message wrapper for sine output
     while (ros::ok()) {
         sine1 = amplitude1 * sin(2*pi*frequency1*t); // Calculate sine1
         sine2 = amplitude2 * sin(2*pi*frequency2*t); // Calculate sine2
         
         output.header.seq = seq;
-        name[0] = "joint1";
-        name[1] = "joint2";
         output.name = name;
         position[0] = sine1; // Store sine value in proper message format
         position[1] = sine2;
