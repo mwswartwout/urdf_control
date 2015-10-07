@@ -11,14 +11,13 @@ int main(int argc, char **argv) {
 
     double pi = 3.14159; // value of pi
     double t = 0; // current time in calculation
-    double dt = 0.1; // timestep for calculation
+    double dt = 0.01; // timestep for calculation
     double sine1; // sine output for joint1
     double sine2; // sine output for joint2
     double amplitude1 = pi; // amplitude value for joint1
     double frequency1 = 1; // frequency value for joint1
     double amplitude2 = pi; // amplitude value for joint2
     double frequency2 = 4; // frequency value for joint2
-    int seq = 0;
     std::vector<double> position(2, 0);
     std::vector<std::string> name;
     std::vector<std::string>::iterator nameIt;
@@ -29,7 +28,7 @@ int main(int argc, char **argv) {
         sine1 = amplitude1 * sin(2*pi*frequency1*t); // Calculate sine1
         sine2 = amplitude2 * sin(2*pi*frequency2*t); // Calculate sine2
         
-        output.header.seq = seq;
+        output.header.stamp = ros::Time::now();
         output.name = name;
         position[0] = sine1; // Store sine value in proper message format
         position[1] = sine2;
