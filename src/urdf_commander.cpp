@@ -5,7 +5,7 @@
 int main(int argc, char **argv) {
     ros::init(argc, argv, "minimal_commander"); // minimal_commander node
     ros::NodeHandle n;
-    ros::Publisher joint_publisher = n.advertise<sensor_msgs::JointState>("joint1", 1); // publish to vel_cmd topic
+    ros::Publisher joint_publisher = n.advertise<sensor_msgs::JointState>("joint_states", 1); // publish to vel_cmd topic
     ros::Rate naptime(10); // update @ 10hz
 
     double pi = 3.14159; // value of pi
@@ -24,7 +24,7 @@ int main(int argc, char **argv) {
         sine1 = amplitude1 * sin(2*pi*frequency1*t); // Calculate sine1
         sine2 = amplitude2 * sin(2*pi*frequency2*t); // Calculate sine2
         
-        //output.header.seq = seq;
+        output.header.seq = seq;
         output.name[1] = "joint1";
         output.name[2] = "joint2";
         output.position[1] = sine1; // Store sine value in proper message format
