@@ -63,7 +63,7 @@ find_package(catkin REQUIRED)
 ## Generate added messages and services with any dependencies listed here
 # generate_messages(
 #   DEPENDENCIES
-#   std_msgs  # Or other packages containing msgs
+#   sensor_msgs  # Or other packages containing msgs
 # )
 
 ################################################
@@ -122,15 +122,14 @@ catkin_package(
 
 ## Declare a C++ executable
 # add_executable(urdf_control_node src/urdf_control_node.cpp)
+    add_executable(urdf_commander src/urdf_commander.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
 # add_dependencies(urdf_control_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-# target_link_libraries(urdf_control_node
-#   ${catkin_LIBRARIES}
-# )
+    target_link_libraries(urdf_commander ${catkin_LIBRARIES} )
 
 #############
 ## Install ##
