@@ -5,7 +5,7 @@
 int main(int argc, char **argv) {
     ros::init(argc, argv, "urdf_gazebo_commander"); // minimal_commander node
     ros::NodeHandle n;
-    ros::Publisher command_publisher = n.advertise<std_msgs::Float64>("vel_cmd", 1); // publish to vel_cmd topic
+    ros::Publisher command_publisher = n.advertise<std_msgs::Float64>("pos_cmd", 1); // publish to vel_cmd topic
     ros::Rate naptime(10); // update @ 10hz
 
     double pi = 3.14159; // value of pi
