@@ -28,7 +28,7 @@ void posCmdCB(const std_msgs::Float64& pos_cmd_msg)
 
 
 int main(int argc, char **argv) {
-    ros::init(argc, argv, "urdf_joint_controller");
+    ros::init(argc, argv, "urdf_joint1_controller");
     ros::NodeHandle nh;
     ros::Duration half_sec(0.5);
     
@@ -58,9 +58,9 @@ int main(int argc, char **argv) {
     gazebo_msgs::ApplyJointEffort effort_cmd_srv_msg;
     gazebo_msgs::GetJointProperties get_joint_state_srv_msg;
     
-    ros::Publisher trq_publisher = nh.advertise<std_msgs::Float64>("jnt_trq", 1); 
-    ros::Publisher vel_publisher = nh.advertise<std_msgs::Float64>("jnt_vel", 1);     
-    ros::Publisher pos_publisher = nh.advertise<std_msgs::Float64>("jnt_pos", 1);  
+    ros::Publisher trq_publisher = nh.advertise<std_msgs::Float64>("jnt1_trq", 1); 
+    ros::Publisher vel_publisher = nh.advertise<std_msgs::Float64>("jnt1_vel", 1);     
+    ros::Publisher pos_publisher = nh.advertise<std_msgs::Float64>("jnt1_pos", 1);  
     ros::Publisher joint_state_publisher = nh.advertise<sensor_msgs::JointState>("joint_states", 1); 
 
     ros::Subscriber pos_cmd_subscriber = nh.subscribe("pos_cmd1",1,posCmdCB); 
