@@ -123,7 +123,8 @@ catkin_package(
 ## Declare a C++ executable
 # add_executable(urdf_control_node src/urdf_control_node.cpp)
     add_executable(urdf_rviz_commander src/urdf_rviz_commander.cpp)
-    add_executable(urdf_joint_controller src/urdf_joint_controller.cpp)
+    add_executable(urdf_joint1_controller src/urdf_joint1_controller.cpp)
+    add_executable(urdf_joint2_controller src/urdf_joint2_controller.cpp)
     add_executable(urdf_gazebo_commander src/urdf_gazebo_commander.cpp)
 ## Add cmake target dependencies of the executable
 ## same as for the library above
@@ -131,7 +132,8 @@ catkin_package(
 
 ## Specify libraries to link a library or executable target against
     target_link_libraries(urdf_rviz_commander ${catkin_LIBRARIES} )
-    target_link_libraries(urdf_joint_controller ${catkin_LIBRARIES} )
+    target_link_libraries(urdf_joint1_controller ${catkin_LIBRARIES} )
+    target_link_libraries(urdf_joint2_controller ${catkin_LIBRARIES} )
     target_link_libraries(urdf_gazebo_commander ${catkin_LIBRARIES} )
 #############
 ## Install ##
