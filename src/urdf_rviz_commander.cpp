@@ -4,7 +4,7 @@
 #include <vector>
 
 int main(int argc, char **argv) {
-    ros::init(argc, argv, "minimal_commander"); // minimal_commander node
+    ros::init(argc, argv, "urdf_rviz_commander"); // minimal_commander node
     ros::NodeHandle n;
     ros::Publisher joint_publisher = n.advertise<sensor_msgs::JointState>("joint_states", 1); // publish to vel_cmd topic
     ros::Rate naptime(10); // update @ 10hz
