@@ -100,7 +100,7 @@ int main(int argc, char **argv) {
     get_joint_state_srv_msg2.request.joint_name = "joint2";
     //double q1_des = 1.0;
     double q1_err, q2_err;
-    double Kp = 10.0;
+    double Kp = 20.0;
     double Kv = 3;
     double trq_cmd1, trq_cmd2;
 
@@ -142,7 +142,7 @@ while(ros::ok()) {
         }        
             
         trq_cmd1 = Kp*(q1_err)-Kv*q1dot;
-        trq_cmd1 = sat(trq_cmd1, 10.0); //saturate at 1 N-m
+        //trq_cmd1 = sat(trq_cmd1, 10.0); //saturate at 1 N-m
         trq_msg1.data = trq_cmd1;
         trq_publisher1.publish(trq_msg1);
         // send torque command to Gazebo
@@ -179,7 +179,7 @@ while(ros::ok()) {
         }        
             
         trq_cmd2 = Kp*(q2_err)-Kv*q2dot;
-        trq_cmd2 = sat(trq_cmd2, 10.0); //saturate at 1 N-m
+        //trq_cmd2 = sat(trq_cmd2, 10.0); //saturate at 1 N-m
         trq_msg2.data = trq_cmd2;
         trq_publisher2.publish(trq_msg2);
         // send torque command to Gazebo
