@@ -126,6 +126,7 @@ catkin_package(
     add_executable(urdf_joint1_controller src/urdf_joint1_controller.cpp)
     add_executable(urdf_joint2_controller src/urdf_joint2_controller.cpp)
     add_executable(urdf_gazebo_commander src/urdf_gazebo_commander.cpp)
+    add_executable(urdf_joint_controller src/urdf_joint_controller.cpp)
 ## Add cmake target dependencies of the executable
 ## same as for the library above
 # add_dependencies(urdf_control_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
@@ -135,6 +136,7 @@ catkin_package(
     target_link_libraries(urdf_joint1_controller ${catkin_LIBRARIES} )
     target_link_libraries(urdf_joint2_controller ${catkin_LIBRARIES} )
     target_link_libraries(urdf_gazebo_commander ${catkin_LIBRARIES} )
+    target_link_libraries(urdf_joint_controller ${catkin_LIBRARIES} )
 #############
 ## Install ##
 #############

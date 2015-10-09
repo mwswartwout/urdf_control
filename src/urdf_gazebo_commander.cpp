@@ -7,17 +7,17 @@ int main(int argc, char **argv) {
     ros::NodeHandle n;
     ros::Publisher command_publisher1 = n.advertise<std_msgs::Float64>("pos_cmd1", 1); // publish to vel_cmd topic
     ros::Publisher command_publisher2 = n.advertise<std_msgs::Float64>("pos_cmd2", 1); // publish to vel_cmd topic
-    ros::Rate naptime(1); // update @ 10hz
+    ros::Rate naptime(10); // update @ 10hz
 
     double pi = 3.14159; // value of pi
     double t = 0; // current time in calculation
     double dt = 0.01; // timestep for calculation
     double sine1; // sine output
     double sine2;
-    double amplitude1 = pi; // amplitude value for joint1
-    double frequency1 = 1; // frequency value for joint1
-    double amplitude2 = pi; // amplitude value for joint2
-    double frequency2 = 4; // frequency value for joint2ouble frequency = 1; // frequency value for sine
+    double amplitude1 = 1; // amplitude value for joint1
+    double frequency1 = .2; // frequency value for joint1
+    double amplitude2 = 1; // amplitude value for joint2
+    double frequency2 = .05; // frequency value for joint2ouble frequency = 1; // frequency value for sine
  
     std_msgs::Float64 output1; // message wrapper for sine output
     std_msgs::Float64 output2;

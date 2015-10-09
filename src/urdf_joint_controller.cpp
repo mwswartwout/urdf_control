@@ -100,7 +100,7 @@ int main(int argc, char **argv) {
     get_joint_state_srv_msg2.request.joint_name = "joint2";
     //double q1_des = 1.0;
     double q1_err, q2_err;
-    double Kp = 20.0;
+    double Kp = 10.0;
     double Kv = 3;
     double trq_cmd1, trq_cmd2;
 
