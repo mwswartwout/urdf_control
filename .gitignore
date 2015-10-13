@@ -48,3 +48,6 @@ CATKIN_IGNORE
 
 # Swap files
 *.swp
+
+# Video files
+*.mp4
